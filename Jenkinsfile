@@ -3,10 +3,11 @@ pipeline {
     
     stages {
     	stage('Checkout') {
-		steps { 
-			git 'https://github.com/vaishnavig1706/DevOps.git'
-		}
-	}
+  		steps {
+    			git branch: 'main',  // Change from 'master' to 'main'
+        		url: 'https://github.com/vaishnavig1706/DevOps.git'
+  		}
+ 	}
 
 	stage('Build docker image') {
 		steps {
