@@ -8,13 +8,13 @@ pipeline {
 		}
 	}
 
-	stage(Build docker image) {
+	stage('Build docker image') {
 		steps {
 			sh 'docker build -t myapp:latest .'
 		}
 	}
 
-	stage(Run container) {
+	stage('Run container') {
 		steps {
 			sh 'docker run -d --name mycontainer -p 8080:80 myapp:latest'
 		} 
