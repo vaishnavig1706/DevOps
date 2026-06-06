@@ -1,0 +1,24 @@
+pipeline {
+    agent any
+    
+    stages {
+    	stage('Checkout') {
+		steps { 
+			git 'https://github.com/vaishnavig1706/DevOps.git'
+		}
+	}
+
+	stage(Build docker image) {
+		steps {
+			sh 'docker build -t myapp:latest .'
+		}
+	}
+
+	stage(Run container) {
+		steps {
+			sh 'docker run -d --name mycontainer -p 8080:80 myapp:latest'
+		} 
+	}
+   }
+}
+
