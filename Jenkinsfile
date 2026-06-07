@@ -17,9 +17,15 @@ pipeline {
 
 	stage('Run container') {
 		steps {
-			sh 'docker run -d --name mycontainer2 -p 8081:80 myapp:latest'
+			sh 'docker run -d --name mycontainer2 -p 9090:80 myapp:latest'
 		} 
 	}
-   }
+    	
+	stage('delete container') {
+		steps { 
+			sh 'docker rm mycontainer2'
+		}
+	}
+    }
 }
 
