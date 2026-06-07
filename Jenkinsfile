@@ -17,7 +17,7 @@ pipeline {
 
 	stage('Run container') {
 		steps {
-			sh 'docker run -d --name mycontainer4 -p 6001:80 myapp:latest'
+			sh 'docker run -d --name mycontainer5 -p 6002:80 myapp:latest'
 		} 
 	}
     	
