@@ -17,7 +17,7 @@ pipeline {
 
 	stage('Run container') {
 		steps {
-			sh 'docker run -d --name mycontainer2 -p 9090:80 myapp:latest'
+			sh 'docker run -d --name mycontainer3 -p 9090:80 myapp:latest'
 		} 
 	}
     	
